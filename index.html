@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Quick JS Test!</title>
+
+    <!--Bootstrap-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Styling sheet for front-end testing purposes-->
+    <!--<link rel="stylesheet" href="css/styles.css" />-->
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <h1 class="display-1 text-uppercase"><kbd> JS Tester</kbd></h1>
+      <br />
+      <div class="row">
+        <br />
+        <div class="col-sm ">
+          <h4 style="text-align: justify">
+            On this page, the idea is to be able to run your JavaScript code
+            here and to immediately see results in the text area on the right:
+          </h4>
+          <br />
+        </div>
+      </div>
+      <!--Coding area-->
+      <div class="row shadow m-1" id="moodArea">
+        <div class="col-sm m-4">
+          <h5 id="leftTxt">
+            Type your JavaScript code below:
+          </h5>
+          <textarea
+            id="input"
+            class="w-100 shadow"
+            style="height:500px"
+          ></textarea>
+          <button
+            class="btn btn-dark shadow mt-1 mr-1 mb-1"
+            onclick="runCode()"
+          >
+            Run eval()
+          </button>
+          <button
+            class="btn btn-dark shadow mt-1 mr-1 mb-1"
+            onclick="runCode2()"
+          >
+            Run Function()
+          </button>
+          <button class="btn btn-dark shadow mt-1 mr-1 mb-1">
+            <span id="download">
+              Download Code
+            </span>
+          </button>
+          <div class="btn-group-toggle mt-1 mr-1 mb-1" data-toggle="buttons">
+            <label class="btn btn-dark inactive shadow" id="checkedBtn">
+              <input type="checkbox" checked autocomplete="off" checked />
+              Change Mood
+            </label>
+          </div>
+        </div>
+
+        <div class="col-sm m-4">
+          <h5 id="rightTxt">Output:</h5>
+          <textarea
+            id="output"
+            class="w-100 shadow"
+            style="height:500px"
+          ></textarea>
+          <!--Alert area-->
+          <div class="row mt-1">
+            <div class="col-sm">
+              <div id="alertArea" class="alert" role="alert"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--My javascript code-->
+    <script src="js/testlogic.js"></script>
+  </body>
+</html>
