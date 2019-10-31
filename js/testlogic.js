@@ -89,6 +89,8 @@ function runCode() {
   }
   return newInput, outputContentArea, output;
 }
+
+var testVar = "I am in global scope? Can you get to me?";
 function runCode2() {
   //this function is just used to generate an anonymous function so that the user can copy paste it somewhere else
   var newInput = document.getElementById("input").value;
@@ -96,10 +98,12 @@ function runCode2() {
   var output;
   try {
     //we need to convert the input string into JavaScript and run the code in the output
-    output = window.Function(newInput);
+    // output = window.Function('"use strict";return (' + newInput + ")");
+    output = new Function('"use strict";' + newInput);
 
     //display results in output area
-    outputContentArea.value = output;
+    outputContentArea.value = output();
+
     console.log("window.Function() button works");
 
     //alert("This is valid JS code");
